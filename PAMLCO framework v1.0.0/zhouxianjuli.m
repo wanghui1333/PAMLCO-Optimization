@@ -1,0 +1,57 @@
+function [x_zhouxian, bottom]=zhouxianjuli(X)
+x1 = 14590298.54;
+x2 = 14590387.14;
+x3 = 14594093.97;
+x4 = 14594071.19;
+x5 = 14596312.05;
+x6 = 14595682.77;
+x7 = 14595384.69;
+x8 = 14594447.24;
+x9 = 14593454.54;
+x10 = 14591911.32;
+
+y1 = @(s)111.456055*X-1614027419.02362;
+y2 = @(s)-0.042626*X+12781502.511442;
+y3 = @(s)-132.498495*X+1945854900.91992;
+y4 = @(s)-0.403134*X+18045798.32178;
+y5 = @(s)5.714262*X-71245622.65411;
+y6 = @(s)9.72746*X-129820987.56021;
+y7 = @(s)2.005155*X-17110975.388719;
+y8 = @(s)0.958945*X-1842118.740377;
+y9 = @(s)0.282781*X+8025449.853353;
+y10 = @(s)1.282005*X-6555138.148212;
+
+
+if X >= x1 && X < x2
+    top = y1(X);
+    bottom = y10(X) ;
+    x_zhouxian = top - bottom;
+elseif X >= x2 && X < x10
+    top = y2(X);
+    bottom = y10(X) ;
+    x_zhouxian = top - bottom;
+elseif X >= x10 && X < x9
+    top = y2(X);
+    bottom = y9(X) ;
+    x_zhouxian = top - bottom;
+elseif X >= x9 && X < x3
+    top = y2(X);
+    bottom = y8(X) ;
+    x_zhouxian = top - bottom;
+elseif X >= x4 && X < x8
+    top = y4(X);
+    bottom = y8(X) ;
+    x_zhouxian = top - bottom;
+elseif X >= x8 && X < x7
+    top = y4(X);
+    bottom = y7(X) ;
+    x_zhouxian = top - bottom;
+elseif X >= x7 && X < x6
+    top = y4(X);
+    bottom = y6(X) ;
+    x_zhouxian = top - bottom;
+elseif X >= x6 && X < x5
+    top = y4(X);
+    bottom = y5(X) ;
+    x_zhouxian = top - bottom;
+end
