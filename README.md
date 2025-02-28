@@ -1,5 +1,3 @@
-# PAMLCO-Optimization
-
 # Single Well Optimization Tool
 ## Overview
 This single-well optimization tool represents a component of the PAMLCO framework, designed to efficiently optimize shale gas well completion parameters. The tool employs a dual-approach strategy combining Gaussian Process Regression (GPR) proxy modeling with Genetic Algorithm (GA) to achieve optimal well designs while dramatically reducing computational time.
